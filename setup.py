@@ -1,12 +1,12 @@
 from setuptools import setup, find_packages
 
-VERSION = '0.0.1' 
+VERSION = '0.0.4' 
 DESCRIPTION = 'Backtracking Python package'
 LONG_DESCRIPTION = 'Generic implementation of a backtracker algorithm based on Steven Skiena in python.'
 
 # Setting up
 setup(
-       # the name must match the folder name 'verysimplemodule'
+       # the name must match the folder name
         name="backtracker", 
         version=VERSION,
         author="Ryan Najafi",
