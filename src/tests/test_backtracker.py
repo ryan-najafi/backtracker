@@ -1,4 +1,5 @@
-import backtracker.backtrackerlib as bt
+from src import backtracker as bt
+
 
 def test_backtracker_subsets():
     a = []
@@ -12,7 +13,7 @@ def test_backtracker_subsets():
         result = []
         for i, c in enumerate(a):
             if c:
-                result.append(input[i])
+              result.append(input[i])
         if len(result) == 3:
             is_finished[0] = True
         output.append(result)
@@ -27,3 +28,7 @@ def test_backtracker_subsets():
         a.pop()
 
     get_subsets = bt.BackTracker(a, k, input, is_solution, process_solution, get_candidates, make_move, unmake_move)
+    get_subsets.back_track()
+    assert get_subsets.output == [[], ['d'], ['c'], ['c', 'd'], ['b'], ['b', 'd'], ['b', 'c'], ['b', 'c', 'd']]
+    
+test_backtracker_subsets()

@@ -10,7 +10,7 @@ setup(
         name="backtracker", 
         version=VERSION,
         author="Ryan Najafi",
-        author_email="<ryan.m.najafi@email.com>",
+        author_email="ryan.m.najafi@gmail.com",
         description=DESCRIPTION,
         long_description=LONG_DESCRIPTION,
         packages=find_packages(),
