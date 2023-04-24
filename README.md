@@ -7,6 +7,7 @@ pip install backtracker==0.0.4
 
 In Python:
 
+```
 from backtracker import backtracker as bt
 
 a = []
@@ -37,3 +38,4 @@ def unmake_move(a, k, input, c):
 get_subsets = bt.BackTracker(a, k, input, is_solution, process_solution, get_candidates, make_move, unmake_move)
 get_subsets.back_track()
 print(get_subsets.output)  
+```
