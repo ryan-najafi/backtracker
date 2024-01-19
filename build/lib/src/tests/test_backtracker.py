@@ -27,5 +27,6 @@ def test_backtracker_subsets():
 
     back_tracker = bt.BackTracker(a=a, level=0, input=input, is_solution=is_solution, process_solution=process_solution, get_candidates=get_candidates, make_move=make_move, unmake_move=unmake_move)
     assert [x for x in back_tracker.solutions()] == ['', 'c', 'b', 'bc', 'a', 'ac', 'ab', 'abc']
-    
+
+
 test_backtracker_subsets()
