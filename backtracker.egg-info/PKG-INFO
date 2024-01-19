@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: backtracker
+Version: 0.0.6
+Summary: Backtracking Python package
+Author: Ryan Najafi
+Author-email: ryan.m.najafi@gmail.com
+Keywords: python,backtracker
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Education
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+License-File: LICENSE
+
+Generic implementation of a backtracker algorithm based on Steven Skiena in python.

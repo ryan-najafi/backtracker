@@ -9,7 +9,7 @@ Customizable for a wide range of problems.
 Allows defining problem-specific solution processing, candidate generation, and move making/unmaking.
 
 ## Installation
-pip install backtracker==0.0.5
+pip install backtracker==0.0.6
 
 ## Usage
 To use the BackTracker class, you need to define functions for:
