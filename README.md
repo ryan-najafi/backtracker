@@ -3,13 +3,16 @@ The BackTracker class is a Python implementation of the backtracking algorithm, 
 
 This is based on [Steven Skiena](https://www3.cs.stonybrook.edu/~algorith/video-lectures/2007/lecture15.pdf).
 
+GitHub Page: https://github.com/ryan-najafi/backtracker
+
+
 ## Features
 Generic backtracking implementation.
 Customizable for a wide range of problems.
 Allows defining problem-specific solution processing, candidate generation, and move making/unmaking.
 
 ## Installation
-pip install backtracker==0.0.6
+pip install backtracker==0.0.7
 
 ## Usage
 To use the BackTracker class, you need to define functions for:
