@@ -9,8 +9,7 @@ class BackTracker():
         get_candidates: Callable[[List[Any], int, List[Any]], List[Any]], 
         make_move: Callable[[List[Any], int, List[Any], Any], None], 
         unmake_move: Callable[[List[Any], int, List[Any], Any], None],
-        a: List[Any] = [], 
-        level: int = 0,         
+        a: List[Any] = None, 
     ):
         '''
         Initializes the BackTracker class.
@@ -25,8 +24,7 @@ class BackTracker():
         make_move (Callable): Function that updates 'a' with a new candidate.
         unmake_move (Callable): Function that reverts 'a' back to its state before the last move.
         '''
-        self.a = a
-        self.level = level
+        self.a = a if a is not None else []
         self.input = input
         self.is_solution = is_solution
         self.process_solution = process_solution
@@ -34,7 +32,7 @@ class BackTracker():
         self.make_move = make_move
         self.unmake_move = unmake_move
 
-    def back_track(self) -> None:
+    def back_track(self, level: int = 0) -> None:
         '''
         The main method for the backtracking algorithm. It recursively searches for a solution.
 
@@ -42,16 +40,14 @@ class BackTracker():
         the solution is processed using 'process_solution' and yielded. If not, the method
         generates new candidates and explores each recursively, making and unmaking moves as it progresses.
         '''    
-        if self.is_solution(self.a, self.level, self.input):
-            output = self.process_solution(self.a, self.level, self.input)
+        if self.is_solution(self.a, level, self.input):
+            output = self.process_solution(self.a, level, self.input)
             yield output
-        else:
-            self.level += 1
-            candidates = self.get_candidates(self.a, self.level, self.input)
-            for c in candidates:
-                self.make_move(self.a, self.level, self.input, c)
-                yield from self.back_track()
-                self.unmake_move(self.a, self.level, self.input, c)
+        candidates = self.get_candidates(self.a, level, self.input)
+        for c in candidates:
+            self.make_move(self.a, level, self.input, c)
+            yield from self.back_track(level + 1)
+            self.unmake_move(self.a, level, self.input, c)
 
     def solutions(self):
         '''
@@ -60,7 +56,7 @@ class BackTracker():
         Yields:
         The next solution found by the backtracking algorithm.
         '''
-        yield from self.back_track()
+        yield from self.back_track(level=0)
         
 if __name__ == "__main__":
     print("This is a class for backtracking problems.")
